@@ -28,20 +28,20 @@ class Solution {
         ListNode l2=sortList(slow);//slow is pointing to 1
         return mergelist(l1,l2);//return 2->4 and 1->3
     }
-    ListNode mergelist(ListNode h1,ListNode h2){//to merge two sorted list like 2->4 and 1->3
+    ListNode mergelist(ListNode l1,ListNode l2){//to merge two sorted list like 2->4 and 1->3
         ListNode dummy = new ListNode();
         ListNode curr = dummy;
-        while(h1!=null && h2!=null){
-            if(h1.val<=h2.val){
-                curr.next=h1;
-                h1=h1.next;
+        while(l1!=null && l2!=null){
+            if(l1.val<=l2.val){
+                curr.next=l1;
+                l1=l1.next;
             }else{
-                curr.next=h2;
-                h2=h2.next;
+                curr.next=l2;
+                l2=l2.next;
             }
             curr=curr.next;
         }
-        curr.next=h1!=null ? h1:h2;//curr moves till both l1 and l2 is not null
+        curr.next=l1!=null ? l1:l2;//curr moves till both l1 and l2 is not null
         return dummy.next;
     }
     

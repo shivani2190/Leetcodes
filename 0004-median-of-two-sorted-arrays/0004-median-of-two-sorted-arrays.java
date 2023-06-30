@@ -14,6 +14,7 @@ class Solution {
             }
             k++;
         }   
+        //again looping for the left elements in the array after being sorted
             while(i<m){
                 a[k]=nums1[i];
                 i++;

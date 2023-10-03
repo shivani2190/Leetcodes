@@ -7,10 +7,6 @@ class Solution {
          for(int i=0; i<word2.length;i++){
             b=b+word2[i];
         }
-        if(a.equals(b)){
-            return true;
-        }else{
-            return false;
-        }
+        return a.compareTo(b)==0;
     }
 }

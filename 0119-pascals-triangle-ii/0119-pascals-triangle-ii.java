@@ -1,6 +1,6 @@
 class Solution {
     public List<Integer> getRow(int rowIndex) {
-        List<Integer> f = new ArrayList<>();
+    List<Integer> f = new ArrayList<>();
       for (int i = 0; i < rowIndex + 1; ++i) {
             f.add(1);
         }

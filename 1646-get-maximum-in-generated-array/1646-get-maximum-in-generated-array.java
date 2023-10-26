@@ -7,7 +7,7 @@ class Solution {
         nums[0] = 0;
         nums[1] = 1;
         for (int i = 2; i <= n; ++i) {
-            nums[i] = i % 2 == 0 ? nums[i >> 1] : nums[i >> 1] + nums[(i >> 1) + 1];
+            nums[i] = i % 2 == 0 ? nums[i/2] : nums[(i -1)/2] + nums[(i/2) + 1];
         }
         return Arrays.stream(nums).max().getAsInt();
     }

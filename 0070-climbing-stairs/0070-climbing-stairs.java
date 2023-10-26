@@ -1,15 +1,12 @@
 class Solution {
     public int climbStairs(int n) {
-        if(n==0) return 0;
-        if(n==1) return 1;
-        int one=1;
-        int two=0;
-        int result=0;
-        for(int i=1;i<=n;i++){
-            result=one+two;
-            two=one;
-            one=result;
+        if(n<3) return n;
+        int[] a=new int[n];
+        a[0]=1;
+        a[1]=2;
+        for(int i=2;i<n;i++){
+           a[i]=a[i-1]+a[i-2];
         }
-        return result;
+        return a[n-1];
     }
-}
+}//hint: forms fibonacci sequence

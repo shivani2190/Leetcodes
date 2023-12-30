@@ -1,8 +1,8 @@
 class Solution {
     public boolean isReachableAtTime(int sx, int sy, int fx, int fy, int t) {
-       if(sx==fx && sy==fy) return t!=1;
-        int dx=Math.abs(sx-fx);
-        int dy=Math.abs(sy-fy);
-        return Math.max(dx,dy)<=t;
+       int min = Math.min(Math.abs(sx-fx),Math.abs(sy-fy)) + Math.abs(Math.abs(sx-fx) - Math.abs(sy-fy)); 
+        if(sx==fx && sy==fy && t==1) return false;
+        if(t>=min) return true;
+        return false;
     }
 }

@@ -1,12 +1,19 @@
 class Solution {
     public boolean halvesAreAlike(String s) {
-        var set=Set.of('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U');
-        int a=0;
-        int b=0;
-        for(int i=0,j=s.length()-1;i<j;i++,j--){
-            a+=set.contains(s.charAt(i))?1:0;
-            b+=set.contains(s.charAt(j))?1:0;
+         Set<Character> vowels = new HashSet<>();
+        vowels.add('a'); vowels.add('e'); vowels.add('i'); vowels.add('o'); vowels.add('u');
+        vowels.add('A'); vowels.add('E'); vowels.add('I'); vowels.add('O'); vowels.add('U');
+
+        int vowelsCount = 0;
+        int midIndex = s.length() / 2;
+
+        for (int i = 0; i < midIndex; i++) {
+            char charA = s.charAt(i);
+            char charB = s.charAt(midIndex + i);
+            if (vowels.contains(charA)) vowelsCount++;
+            if (vowels.contains(charB)) vowelsCount--;
         }
-        return a==b;
+
+        return vowelsCount == 0;
     }
 }

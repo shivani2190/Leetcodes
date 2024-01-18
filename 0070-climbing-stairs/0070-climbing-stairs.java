@@ -9,4 +9,4 @@ class Solution {
         }
         return a[n-1];
     }
-}//hint: forms fibonacci sequence
+}

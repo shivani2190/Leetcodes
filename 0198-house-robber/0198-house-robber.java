@@ -13,6 +13,6 @@ class Solution {
             oddHouses = Math.max(oddHouses, evenHouses);
             evenHouses = i + temp;
         }
-        return Math.max(oddHouses, evenHouses); 
+        return Math.max(oddHouses, evenHouses);
     }
 }

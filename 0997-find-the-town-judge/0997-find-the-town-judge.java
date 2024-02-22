@@ -1,17 +1,15 @@
 class Solution {
     public int findJudge(int n, int[][] trust) {
-      int[]netTrustGains=new int[n+1];
-        for(int[]i:trust){
-            netTrustGains[i[0]]--;
-            netTrustGains[i[1]]++;
-            
+        int[] in = new int[n + 1];
+        int[] out = new int[n + 1];
+        for (int[] a : trust) {
+            out[a[0]]++;
+            in[a[1]]++;
         }
-        int judge=-1;
-        for(int i=1;i<=n;i++){
-            if(netTrustGains[i]==n-1){
-                judge=i;
-            }
+        for (int i = 1; i <= n; ++i) {
+            if (in[i] == n - 1 && out[i] == 0)
+                return i;
         }
-        return judge;  
+        return -1; 
     }
 }

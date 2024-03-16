@@ -7,5 +7,5 @@ class Solution {
             if(s == (t - s + i)) return i;// s+i because i is two times for finding sum ie 1 to i then i to n
             }
         return -1;
-        }
+    }
 }
